@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Main Page</title>
+
+		<link rel="stylesheet" href="../css/normalize.css" />
+		<link rel="stylesheet" href="../css/styles.css" />
+	</head>
+
+	<body>
+		<div class="crud-section" id="user-section">
+			<h1>Users</h1>
+			<table id="user-table">
+				<tr>
+					<th>User ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Role</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+			<button id="user-button">Get Rows</button>
+
+			<form method="get" id="manage-user-form">
+				<h3>User Form</h3>
+
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" placeholder="Name" />
+
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" placeholder="Email" />
+
+				<label for="role">Role</label>
+				<select name="role" id="role">
+					<option value="founder">Founder</option>
+					<option value="investor">Investor</option>
+					<option value="guest" selected="selected">Guest</option>
+					<option value="institution">Institution</option>
+					<option value="admin">Admin</option>
+					<option value="business">Business</option>
+				</select>
+
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" placeholder="Password" />
+
+				<button type="submit">Create User</button>
+			</form>
+		</div>
+
+		<div class="crud-section" id="userProfile-section">
+			<h1>User Profile</h1>
+			<table id="profile-table">
+				<tr>
+					<th>ID</th>
+					<th>Select User ID</th>
+					<th>Gender</th>
+					<th>Phone Number</th>
+					<th>Created At</th>
+					<th>Updated At</th>
+					<th>Status</th>
+					<th>Industry</th>
+					<th>Description</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+			<button id="profile-button">Get Rows</button>
+
+			<form method="get" id="manage-profile-form">
+				<label for="profile_user_id">User ID</label>
+
+				<select id="user_select_id">
+					<option value="user.id">Select User</option>
+				</select>
+
+				<label for="gender">Gender</label>
+				<select name="gender" id="gender">
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other" selected="selected">Other</option>
+				</select>
+
+				<label for="profile_phone_number">Phone Number</label>
+				<input type="int" name="phone_number" id="profile_phone_number" />
+
+				<label for="profile_status">Status</label>
+				<select name="status" id="profile_status">
+					<option value="active">Active</option>
+					<option value="inactive">Inactive</option>
+					<option value="deactivated" selected="selected">Deactivated</option>
+				</select>
+
+				<label for="profile_industry">What industry best describes your work or business?</label>
+				<select name="industry" id="profile_industry">
+					<option value="true">Technology</option>
+					<option value="finance">Finance</option>
+					<option value="healthcare">Healthcare</option>
+					<option value="education">Education</option>
+					<option value="energy">Energy</option>
+					<option value="real_estate">Real Estate</option>
+					<option value="transportation">Transportation</option>
+					<option value="retail">Retail</option>
+					<option value="other" selected="selected">Other</option>
+					<option value="media">Media</option>
+				</select>
+
+				<label for="profile_description">Description</label>
+				<input type="text" name="description" id="profile_description" />
+
+				<button type="submit">Create Profile</button>
+			</form>
+		</div>
+
+		<div class="crud-section" id="venture-section">
+			<h1>Venture</h1>
+			<table id="venture-table">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Created At</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Description</th>
+					<th>Industries</th>
+					<th>Funding Stage</th>
+					<th>Website URL</th>
+					<th>Funding Goal</th>
+					<th>Total Funding</th>
+					<th>Valuation</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+
+			<button id="venture-button">Get Rows</button>
+
+			<form method="get" id="manage-venture-form">
+				<h3>Venture Form</h3>
+
+				<label for="vname">Name</label>
+				<input type="text" name="name" id="vname" placeholder="Name" />
+
+				<label for="phone_number">Phone Number</label>
+				<input type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" />
+
+				<label for="vemail">Email</label>
+				<input type="email" name="email" id="vemail" placeholder="Email" />
+
+				<label for="description">Description</label>
+				<input type="text" name="description" id="description" placeholder="Description" />
+
+				<label for="vindustry">Industry</label>
+				<select name="industries" id="vindustry">
+					<option value="technology">Technology</option>
+					<option value="finance">Finance</option>
+					<option value="healthcare">Healthcare</option>
+					<option value="education">Education</option>
+					<option value="energy">Energy</option>
+					<option value="real_estate">Real_estate</option>
+					<option value="transportation">Transportation</option>
+					<option value="retail">Retail</option>
+					<option value="other" selected="selected">Other</option>
+					<option value="media">Media</option>
+				</select>
+
+				<label for="funding_stage">Funding Stage</label>
+				<select name="funding_stage" id="funding_stage">
+					<option value="pre_seed" selected="selected">Pre Seed</option>
+					<option value="seed">Seed</option>
+					<option value="series_a">Series A</option>
+					<option value="series_b">Series B</option>
+					<option value="series_c">Series C</option>
+					<option value="series_d_plus">Series D Plus</option>
+					<option value="venture_round">Venture Round</option>
+					<option value="private_equity">Private Equity</option>
+					<option value="debt_financing">Debt Financing</option>
+					<option value="grant">Grant</option>
+					<option value="ipo">IPO</option>
+					<option value="acquired">Acquired</option>
+				</select>
+
+				<label for="website_url">Website URL</label>
+				<input type="url" name="website_url" id="website_url" placeholder="Website URL" />
+
+				<label for="funding_goal">Funding Goal</label>
+				<input type="number" name="funding_goal" id="funding_goal" placeholder="Funding Goal" />
+
+				<label for="total_funding">Total Funding</label>
+				<input type="number" name="total_funding" id="total_funding" placeholder="Total funding" />
+
+				<label for="valuation">Valuation</label>
+				<input type="number" name="valuation" id="valuation" placeholder="Valuation" />
+
+				<label for="venture_status">Status</label>
+				<select name="status" id="venture_status">
+					<option value="active">Active</option>
+					<option value="archived">Archived</option>
+					<option value="banned">Banned</option>
+				</select>
+
+				<button>Create Venture</button>
+			</form>
+		</div>
+<!-- 
+		<div class="crud-section" id="member-section">
+			<h1>Team Members</h1>
+			<table id="member-table">
+				<tr>
+					<th>Team Id</th>
+					<th>Member Id</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+
+			<!-- <button id="member-button">Get Rows</button> -->
+
+			<!-- <select name="memberSelect" id="memberSelect">
+				<option id="memberOption" value="">Select member</option> -->
+			</select>
+
+		</div> -->
+
+		<div class="crud-section" id="teams-section">
+			<h1>Teams</h1>
+			<table id="teams-table">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Created At</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+			<button id="teams-button">Get Rows</button>
+
+			<form method="get" id="manage-team-form">
+				<h3>Team Form</h3>
+
+				<label for="team_name">Name</label>
+				<input type="text" name="name" id="team_name" placeholder="Name" />
+
+				<button>Create Team</button>
+			</form>
+		</div>
+
+		<div class="crud-section" id="investment-section">
+			<h1>Investment</h1>
+			<table id="investment-table">
+				<tr>
+					<th>Id</th>
+					<th>User Id</th>
+					<th>Venture Id</th>
+					<th>Name</th>
+					<th>Amount</th>
+					<th>Investment Type</th>
+					<th>Equity Percent</th>
+					<th>Currency</th>
+					<th>Invested on</th>
+					<th>Description</th>
+					<th>Actions</th>
+				</tr>
+			</table>
+			<button id="investment-button">Get Rows</button>
+
+			<form method="get" id="manage-investment-form">
+				<!-- <label for="investment_id">ID</label>
+				<input type="number" name="investment_id" id="investment_id"> -->
+
+				<label for="userInvestment_select_id">User ID</label>
+				<select name="userInvestment_select_id" id="userInvestment_select_id">
+					<option value="text">Select User ID</option>
+				</select>
+
+				<label for="venture_select_id">Venture ID</label>
+				<select name="venture_select_id" id="venture_select_id">
+					<option value="text">Select Venture ID</option>
+				</select>
+
+				<label for="investment_name">Name</label>
+				<input type="text" name="name" id="investment_name" />
+
+				<label for="amount">Amount</label>
+				<input type="number" name="amount" id="amount" />
+
+				<label for="investment_type">Investment Type</label>
+				<select name="investment_type" id="investment_type">
+					<option value="equity">Equity</option>
+					<option value="loan">Loan</option>
+					<option value="grant">Grant</option>
+				</select>
+
+				<label for="equity_percent">Equity Percent</label>
+				<input type="number" name="equity_percent" id="equity_percent" />
+
+				<label for="currency">Currency</label>
+				<select name="currency" id="currency">
+					<option value="USD">USD</option>
+					<option value="EUR">EUR</option>
+					<option value="ALL">ALL</option>
+				</select>
+
+				<label for="invested_on">Invested On</label>
+				<input type="date" id="invested_on" name="invested_on" />
+
+				<label for="description">Description</label>
+				<input type="text" id="investment-description" name="description" />
+
+				<button>Make new Investment</button>
+			</form>
+		</div>
+		<br />
+
+		<!-- <script type="module" src="/javascript/app.js" defer></script> -->
+
+		<script defer src="../javascript/page.js"></script>
+		<script defer src="../javascript/entities/investment.js"></script>
+		<script defer src="../javascript/entities/member.js"></script>
+		<script defer src="../javascript/entities/team.js"></script>
+		<script defer src="../javascript/entities/user.js"></script>
+		<script defer src="../javascript/entities/userprofile.js"></script>
+		<script defer src="../javascript/entities/venture.js"></script>
+
+		<!-- <script defer>
+		
+					const userSelectID = document.getElementById('user_select');
+					function addSelectUserID() {
+						fetch('http://localhost:8000' + '/users/')
+							.then((res) => res.json())
+							.then((data) => {
+								data.forEach((user) => {
+									const option = document.createElement('option');
+									option.textContent = `${user.name}`;
+									userSelectID.appendChild(option);
+								});
+							});
+
+							const selectResponseID = addSelectUserID();
+							return selectResponseID();
+					}
+
+		</script> -->
+	</body>
+</html>

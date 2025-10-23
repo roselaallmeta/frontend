@@ -1,0 +1,177 @@
+.login-body {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	box-sizing: border-box;
+	background: lightgray;
+	font-size: 1.5rem;
+}
+
+.login-box {
+	position: relative;
+	background: lightblue;
+	border-radius: 20px;
+	width: 400px;
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+}
+
+.login-box input {
+	height: 1.5rem;
+	width: 10rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 4rem;
+	text-align: center;
+	color: #fff;
+}
+
+.login-body .login-box label {
+	font-size: 2rem;
+	font-weight: 500;
+	padding-left: 2rem;
+}
+
+.input-box {
+	padding-top: 2rem;
+	width: 310px;
+	margin: 30px;
+	border-bottom: 2px solid #fff;
+	padding-bottom: 1px;
+}
+*/ .login-button button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	padding: 0.3rem 1rem;
+	margin-left: 17rem;
+	margin-top: 2rem;
+	font-size: 1rem;
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.register-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+.register-link .register {
+	text-decoration: none;
+	font-size: 1.6rem;
+}
+
+.register-link .register:hover {
+	font-size: 1.6rem;
+}
+
+.remember-me label input {
+	font-size: 1px;
+	color: #555;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.remember-me input[type='checkbox'] {
+	margin-right: -35px;
+	vertical-align: middle;
+}
+
+.crud-section {
+	padding: 0 0 32px 0;
+	border-color: gray;
+	border-style: solid;
+	border-width: 0px;
+	max-width: 90vw;
+	margin: 0 auto;
+	border-bottom-width: 1px;
+	overflow-x: auto;
+}
+
+.crud-section form {
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 8px;
+}
+
+.crud-section form h3 {
+	margin-top: 0px;
+}
+
+.crud-section table {
+	border-collapse: collapse;
+	border-radius: 6px;
+	min-width: 100%;
+}
+
+.crud-section table th {
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	text-align: left;
+	background-color: #f9f9f9;
+}
+
+/* .remember-forgot .forgot-password {
+	font-size: 1rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	color: black;
+	padding-top: 0;
+} */
+
+.forgot-password:hover {
+	font-size: 1.2rem;
+	transition: all 0.3s ease;
+	color: red;
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	color: blue;
+}
+
+.login-body .form .input-box input {
+	font-size: 1.3rem;
+}
+
+.icon {
+	font-size: 1.2rem;
+	padding-top: 0;
+	padding-right: 1rem;
+}
+
+.error {
+	color: red;
+	font-size: 1.4rem;
+	text-align: center;
+	margin-top: 1rem;
+	min-height: 2rem;
+}
+
+/* .input-box label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+} */
+
+/* --------------------JAVASCRIPT---------------------------- */
