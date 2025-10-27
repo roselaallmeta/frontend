@@ -8,6 +8,8 @@ const leaveTeamButton = document.getElementById('leave-team');
 
 //fix undefined id tek teams -> nuk e merr fronti sic duhet 
 // kur merr undefined, dmth qe row does not have attribute id
+
+
 const addTeamRowToTable = (row) => {
 	const tr = document.createElement('tr');
 	tr.id = 'tr-team-' + row.id;

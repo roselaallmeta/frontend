@@ -2,13 +2,18 @@ console.log('Init');
 
 const BACKEND_URL = 'http://localhost:8000';
 const REDIRECT_URL = 'http://localhost:3000/HTML/app.html';
+const LOGIN_URL = 'http://127.0.0.1:3000/HTML/login.html'
 const NEW_URL= 'https://www.google.com/'
 const url = BACKEND_URL + '/users';
 
 const form = document.getElementById('register-form');
+const isStrongPassword = (p) =>
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{12,}$/.test(p); 
 
 if (form) console.log('Form found', form);
 
+
+// ADD MORE AUTHENTICATION FOR PASSWORD 
 
 const registerUser = async (formInputs) => {
 	try {
@@ -46,7 +51,7 @@ form.addEventListener('submit', (e) => {
 		email: undefined,
 		password: undefined,
 		role: undefined,
-		gender: undefined,
+		gender: undefined
 	};
 
 	const data = new FormData(form);
@@ -72,12 +77,19 @@ form.addEventListener('submit', (e) => {
 		throw new Error('Email not valid!');
 	}
 
-	if (!formInputs.name || formInputs == '') {
+	if (!formInputs.name || formInputs.name == '') {
 		throw new Error('Name field cannot be empty');
 	}
 
-	if (!formInputs.password || formInputs.password.length < 4) {
-		throw new Error('Password cannot be shorter than 4 characters.');
+
+	if(!isStrongPassword(formInputs.password)) {
+		throw new Error('Password must be at least 12 chars with upper, lower, digit, symbol.');
+	}
+
+
+	if (formInputs.name == data.name , formInputs.email == data.email, data.password == data.password, formInputs.role == data.role, formInputs.gender == data.gender) {
+		alert('User is already registered. Log in instead. You are getting redirected to login.');
+		window.location.href = LOGIN_URL;
 	}
 
 	registerUser(formInputs);
