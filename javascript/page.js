@@ -1,6 +1,199 @@
-const BACKEND_URL = 'http://localhost:8000';
-
 console.log('page.js loaded');
+console.log("App initalized with:" , {BACKEND_URL});
+
+// const saveIdInLS = async (userId) => {
+// 	const response = await fetch (`${BACKEND_URL}/users?limit=10&ofset=0`);
+// 	const data = await response.json();
+// 	console.log('ids', data);
+// }
+
+
+// const userId = localStorage.setItem('user_id', id);
+// const printesUserId = localStorage.getItem('user_id');
+// console.log(printesUserId);
+
+
+
+
+
+// Faqja Kryesore:
+// - [ ]  Merr userId nga localStorage
+// - [ ]  Shfaq diku userId qe ke stored & nje buton "Logout"
+//     - [ ]  Kur klikon, duhet te heqesh userId nga localStorage & bej redirect tek faqja login
+
+// merre id nga backend dhe ruaje si value per local storage
+
+// 1 - merr id nga backend
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const userSelectButton = document.getElementById('select_user');
 // const user_select = document.getElementById('user_select');
@@ -15,20 +208,13 @@ console.log('page.js loaded');
 
 
 // const BACKEND_URL = 'http://localhost:8000'; 
-console.log("App initalized with:" , {BACKEND_URL}) 
-
-
-
-
+ 
 // import {BACKEND_URL} from './entities/investment.js';
 // import {BACKEND_URL} from './entities/member.js';
 // import {BACKEND_URL} from './entities/team.js';
 // import {BACKEND_URL} from './entities/user.js';
 // import {BACKEND_URL} from './entities/userprofile.js';
 // import {BACKEND_URL} from './entities/venture.js';
-
-
-
 
 // const pitch_table = document.getElementById('pitch-table');
 // const addPitchButton = document.getElementById('pitch-button');
@@ -39,45 +225,19 @@ console.log("App initalized with:" , {BACKEND_URL})
 // const bankDetailsTable = document.getElementById('bank-table');
 // const addBankDetailsButton = document.getElementById('bank-button');
 
-
-
-
-//----------------------------------------------------------------
-
-
-
-//-----------------------------------------------------------
-
-
-//--------------------
 //team member
-
-
-
-
 
 // function getSelectMember() {
 
 // 	const response = document.getElementById('rosela')
 // 	response.addEventListener('click', () => {
 // 		response.a
-
 // 	})
-
-	
 // }
-
-
-
-
-
 
 
 //------------------------
 
-
-
-//----------------------
 
 // const addPitchDeckRowToTable = (row) => {
 // 	const tr = document.createElement('tr');
@@ -138,14 +298,7 @@ console.log("App initalized with:" , {BACKEND_URL})
 // 		document.getElementById('pitch-table').innerHTML = err.message;
 // 	}
 // };
-
-//--------------------------
-
-
-	
-
-
-//---------------------------
+//-------------------------
 // const addDocumentRowToTable = (row) => {
 // 	const tr = document.createElement('tr');
 // 	tr.id = 'tr-document-' + row.id;
@@ -269,21 +422,6 @@ console.log("App initalized with:" , {BACKEND_URL})
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const deletePitchRow = async (id) => {
 // 	const endpoint = BACKEND_URL + '/pitch_decks/' + id;
 // 	const response = await fetch(endpoint, {
@@ -345,15 +483,6 @@ console.log("App initalized with:" , {BACKEND_URL})
 
 
 
-
-
-
-
-
-
-
-
-
 // addDocumentButton.addEventListener('click', () => {
 // 	getDocumentRows();
 // });
@@ -365,36 +494,6 @@ console.log("App initalized with:" , {BACKEND_URL})
 // addPitchButton.addEventListener('click', () => {
 // 	getPitchDeckRows();
 // });
-
-//------------------------------------
-
-
-//_------------------------------------------------
-
-
-
-
-
-
-
-
-
-//------------------------------------------------
-
-
-
-//--------------------------------------------------
-
-
-
-
-
-//-------------------------------
-
-
-
-//---------------------------------------------------
-
 
 
 //-------------------------------------------------------------
@@ -473,10 +572,6 @@ console.log("App initalized with:" , {BACKEND_URL})
 // pitchManageForm.addEventListener('submit', processPitchManageForm);
 
 //-----------------------------------------------
-
-
-
-//-------------------------------------------------
 
 // bej append brenda ktij select
 //pastaj beji add tek domi ekzistues tek tabelat

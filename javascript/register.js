@@ -3,8 +3,8 @@ console.log('Init');
 const BACKEND_URL = 'http://localhost:8000';
 const REDIRECT_URL = 'http://localhost:3000/HTML/app.html';
 const LOGIN_URL = 'http://127.0.0.1:3000/HTML/login.html'
-const NEW_URL= 'https://www.google.com/'
-const url = BACKEND_URL + '/users';
+const NEW_URL= 'https://www.google.com/';
+const url = BACKEND_URL + '/users' + '/register';
 
 const form = document.getElementById('register-form');
 const isStrongPassword = (p) =>
@@ -13,7 +13,6 @@ const isStrongPassword = (p) =>
 if (form) console.log('Form found', form);
 
 
-// ADD MORE AUTHENTICATION FOR PASSWORD 
 
 const registerUser = async (formInputs) => {
 	try {
@@ -50,8 +49,7 @@ form.addEventListener('submit', (e) => {
 		name: undefined,
 		email: undefined,
 		password: undefined,
-		role: undefined,
-		gender: undefined
+		role: undefined
 	};
 
 	const data = new FormData(form);
@@ -68,12 +66,6 @@ form.addEventListener('submit', (e) => {
 		!formInputs.email.includes('@') ||
 		!formInputs.email.includes('.')
 	) {
-		// alert("Email not valid!");
-		// return {
-		// 	success: false,
-		// 	errors: ['Email not valid'],
-		// 	data: undefined
-		// }
 		throw new Error('Email not valid!');
 	}
 
@@ -87,68 +79,12 @@ form.addEventListener('submit', (e) => {
 	}
 
 
-	if (formInputs.name == data.name , formInputs.email == data.email, data.password == data.password, formInputs.role == data.role, formInputs.gender == data.gender) {
+	if (formInputs.name == data.name , formInputs.email == data.email, data.password == data.password, formInputs.role == data.role) {
 		alert('User is already registered. Log in instead. You are getting redirected to login.');
 		window.location.href = LOGIN_URL;
 	}
 
 	registerUser(formInputs);
 
-	// fetch(url, {
-	// 	method: 'POST',
-	// 	// mode: 'cors',
-	// 	body: JSON.stringify(formInputs),
-	// 	headers: {
-	// 		'Content-Type': 'application/json',
-	// 		// "X-PINGOTHER": "pingpong"
-	// 	},
-	// })
-	// 	.then((res) => res.json())
-	// 	.then((data) => {
-	// 		responseData = data;
-	// 	})
-	// 	.catch((err) => {
-	// 		console.log(err);
-
-	// 		if (Array.isArray(err)) {
-	// 			for (let error in err) {
-	// 				alert(error);
-	// 			}
-	// 		}
-	// 	});
-
-	// if (!responseData) {
-	// 	console.error('Response data undefined.');
-	// 	return;
-	// }
-
-	// alert('Registered');
-	// console.log('responseData', responseData);
-
-	// Redirect if conditions are met... (Valid registration)
-	// window.location.href = REDIRECT_URL;
 });
 
-// Mock:
-
-// const response = {
-// 		success: false,
-// 		errors: [],
-// 		data: null
-// 	}
-
-// function loadData() {
-//           $.ajax({
-//               type: "POST",
-//               cache: false,
-//               url:'http://localhost:3000/HTML/register.html',
-//               crossDomain: true,
-//               dataType: "json",
-//               headers: { 'x-api-key': 'xoeNNQ9475PCAgLtNP18cTv6YTWWB2JFfOe', 'X-Amz-Date': '1/1/2000', 'X-Amz-Security-Token': 'xoeNNQ9475PCAgLtNP18cTv6YTWWB2JFfOe' },
-//               success: function (response) {
-//                   console.log("CORS is enabled");
-// 									return success;
-//               }
-
-//           });
-//       }

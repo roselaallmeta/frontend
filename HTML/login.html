@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Test Login</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login/Signup</title>
 
+		<link rel="stylesheet" href="../css/normalize.css" />
+		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+	</head>
 
+	<body class="login-background" id="login-form">
+		<div class="container active">
+			<div class="form-box login">
+				<form action="#">
+					<h1>Login</h1>
 
-<body>
-	<form method="get" id="login-form">
+					<div class="input-box">
+						<input type="text" placeholder="Email" id="email" name="email" required />
+						<i class="fa-solid fa-user"></i>
+						<label for="email"></label>
+					</div>
 
-		<label for="email">Email:</label>
-		<input id="email" type="text" name="email">
+					<div class="input-box">
+						<input type="password" placeholder="Password" id="password" name="password" required />
+						<i class="fa-solid fa-lock"></i>
+						<label for="password"></label>
+					</div>
 
-		<br>
+					<div class="forgot-password">
+						<a href="#">Forgot Password?</a>
+					</div>
 
-		<label for="password">Password:</label>
-		<input id="password" type="password" name="password">
+					<button type="submit">Log In</button>
 
-		<button type="submit">Submit</button>
-
-
-		<a href="register.html">Not registered yet? Register now</a>
-	</form>
-	<script src="../javascript/login.js"></script>
-	
-</body>
+					<p>Or login with social platforms</p>
+					<div class="social-icons">
+						<a href="#"><i class="fa-brands fa-google"></i></a>
+						<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+						<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+						<a href="#"><i class="fa-brands fa-square-linkedin"></i></a>
+					</div>
+					<a class="login-register-link" href="register.html">Not registered yet? Register now</a>
+				</form>
+			</div>
+		<script src="../javascript/login.js" defer></script>
+	</body>
 </html>

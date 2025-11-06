@@ -1,100 +1,62 @@
 const redirectURL = 'https://google.com';
 const BACKEND_URL = 'http://localhost:8000';
 
-// const login_form = document.getElementById('login-form');
-// login_form.addEventListener('submit', async(e) => {
-// 	e.preventDefault();
-// });
-
 console.log('Login.js loaded');
+
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
 
-
-// - [ ]  Kur hap faqen, nese kjo userId eshte defined, bej redirect tek faqja kryesore
-// - [ ]  Ne castin qe form submission is successful, ruaj userId te user-it ne local storage & bej redirect tek faqja kryesore
-
-
 document.addEventListener('DOMContentLoaded', () => {
 	loginCheck();
-})
+});
+
 
 async function loginCheck() {
 	const loginForm = document.getElementById('login-form');
-	if(!loginForm) return;
+	if (!loginForm) return;
 
-	loginForm.addEventListener('submit', async(e) => {
+	loginForm.addEventListener('submit', async (e) => {
 		e.preventDefault();
 
-		const email = document.getElementById('email');
-		const password = document.getElementById('password');
-
 		try {
-			const response = await fetch(`${BACKEND_URL}/users/login`, {
+			const response = await fetch(`${BACKEND_URL}/users/token/login`, {
 				method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-					email: "email", 
-					password: "password"}),
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					email: email.value,
+					password: password.value,
+				}),
 			});
 
 			const data = await response.json();
-	
+			fetched_id = localStorage.setItem('id', data.id);
+			console.log(data.id);
 
-			if(data.user_id) {
+			if (!data.id) {
+				alert('Could not login. Check email and password.');
+			}
+
+			else {
 				window.location.href = redirectURL;
 				alert('Welcome back!');
 			}
 
-			if(data) {
-				localStorage.setItem("user_id" , data.user_id);
-				window.location.href = redirectURL;
-				alert('Welcome back!')
-			}
-
-			else {
+			if (data) {
+				if (email.value == data.email && password.value == data.password) {
+					localStorage.setItem('id', data.id);
+					window.location.href = redirectURL;
+					alert('Welcome back!');
+				}
+			} else {
 				alert('Login failed');
 			}
-		}
-
-		catch(e) {
-			console.log(e);
-			alert("Something went wrong.")
+		} catch (e) {
+			console.error(e);
+			alert('Something went wrong.');
 		}
 	});
-};
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 // async function handleLogin(email, password) {
 // 	const response = await fetch(`${BACKEND_URL}/users/login`, {
@@ -121,10 +83,6 @@ async function loginCheck() {
 // 	};
 // };
 
-
-
-
-
 // async function formSubmissionCheck() {
 // 	const response = await fetch(`{BACKEND_URL}/users/login`, {
 // 		method: 'POST',
@@ -146,8 +104,6 @@ async function loginCheck() {
 // 		alert('Login failed!');
 // 	};
 // };
-
-
 
 // login_form.addEventListener('submit', async (e) => {
 // 	e.preventDefault();

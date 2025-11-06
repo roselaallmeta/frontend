@@ -26,7 +26,6 @@ const addTeamRowToTable = (row) => {
   const actions_td = document.createElement('td');
 
 
-
 	const delete_button = document.createElement('button');
 	delete_button.innerHTML = 'Delete Team';
 	delete_button.addEventListener('click', () => {
@@ -43,23 +42,15 @@ const addTeamRowToTable = (row) => {
 		getMemberRows();
 	});
 
+	
 	actions_td.appendChild(addMember_button);
-
-
 	tr.appendChild(id_td);
 	tr.appendChild(name_td);
 	tr.appendChild(createdAt_td);
 	tr.appendChild(actions_td);
 
 	teams_table.appendChild(tr);
-
 };
-
-// shto nje buton view members
-
-
-
-
 
 
 const getTeamRows = async () => {
