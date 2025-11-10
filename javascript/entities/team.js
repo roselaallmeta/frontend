@@ -1,13 +1,11 @@
 console.log('team.js loaded');
-// const BACKEND_URL = 'http://localhost:8000';
+
 
 const teams_table = document.getElementById('teams-table');
 const addTeamsButton = document.getElementById('teams-button');
 const leaveTeamButton = document.getElementById('leave-team');
 
 
-//fix undefined id tek teams -> nuk e merr fronti sic duhet 
-// kur merr undefined, dmth qe row does not have attribute id
 
 
 const addTeamRowToTable = (row) => {
@@ -147,7 +145,6 @@ function processTeamManageForm(e) {
 	};
 
 
-	// { name: "Test", "members": [1] } - nuk i jep kete sepse nuk kerkon kte form
 
 	submitData({
 		team: {

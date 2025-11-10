@@ -1,90 +1,88 @@
 console.log('Init');
 
 const BACKEND_URL = 'http://localhost:8000';
-const REDIRECT_URL = 'http://localhost:3000/HTML/app.html';
-const LOGIN_URL = 'http://127.0.0.1:3000/HTML/login.html'
-const NEW_URL= 'https://www.google.com/';
+const REDIRECT_URL = 'http://localhost:3000/HTML/page.html';
+const LOGIN_URL = 'http://127.0.0.1:3000/HTML/login.html';
+const NEW_URL = 'https://www.google.com/';
 const url = BACKEND_URL + '/users' + '/register';
 
-const form = document.getElementById('register-form');
-const isStrongPassword = (p) =>
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{12,}$/.test(p); 
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const role = document.getElementById('role');
 
-if (form) console.log('Form found', form);
+const registerForm = document.getElementById('register-form');
 
 
+const isStrongPassword = (p) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#%])[A-Za-z\d@$#%]{6,20}$/.test(p);
 
-const registerUser = async (formInputs) => {
-	try {
-		let res = await fetch(url, {
-			method: 'POST',
-			mode: 'cors',
-			body: JSON.stringify(formInputs),
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+document.addEventListener('DOMContentLoaded', () => {
+	registerUser();
+});
 
-		const data = await res.json();
+async function registerUser() {
+	if (!registerForm) return;
 
-		if (!data) {
-			alert('Invalid data');
+	registerForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const formInputs = {
+			name: undefined,
+			role: undefined,
+			email: undefined,
+			password: undefined,
+		};
+
+		const registerFormData = new FormData(registerForm);
+
+		for (const [name, value] of registerFormData) {
+			if (Object.hasOwn(formInputs, name)) formInputs[name] = value;
 		}
 
-		return {
-			success: true,
+		if (!formInputs.name || formInputs.name == '') {
+			throw new Error('Name field cannot be empty');
 		}
 
+		if (
+			!formInputs.email ||
+			formInputs.email == '' ||
+			!formInputs.email.includes('@') ||
+			!formInputs.email.includes('.')
+		) {
+			throw new Error('Email not valid!');
+		}
+
+		if (!isStrongPassword(formInputs.password)) {
+			throw new Error('Try another password.');
+		}
+
+		try {
+			let res = await fetch(url, {
+				method: 'POST',
+				mode: 'cors',
+				body: JSON.stringify(formInputs),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+
+			const data = await res.json();
+
+			if (!data) {
+				alert('Invalid data');
+			} 
+			
+			else {
+				console.log('Form sucessful');
+				window.location.href = REDIRECT_URL;
+			}
+
+			console.log('Form inputs: ', { formInputs });
 		} catch (err) {
 			console.error(err);
 		}
-};
-
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-
-	console.log('Form submitted');
-
-	let formInputs = {
-		name: undefined,
-		email: undefined,
-		password: undefined,
-		role: undefined
-	};
-
-	const data = new FormData(form);
-
-	for (const [name, value] of data) {
-		if (Object.hasOwn(formInputs, name)) formInputs[name] = value;
-	}
-
-	console.log('Form inputs: ', { formInputs });
-
-	if (
-		!formInputs.email ||
-		formInputs.email == '' ||
-		!formInputs.email.includes('@') ||
-		!formInputs.email.includes('.')
-	) {
-		throw new Error('Email not valid!');
-	}
-
-	if (!formInputs.name || formInputs.name == '') {
-		throw new Error('Name field cannot be empty');
-	}
+	});
+}
 
 
-	if(!isStrongPassword(formInputs.password)) {
-		throw new Error('Password must be at least 12 chars with upper, lower, digit, symbol.');
-	}
-
-
-	if (formInputs.name == data.name , formInputs.email == data.email, data.password == data.password, formInputs.role == data.role) {
-		alert('User is already registered. Log in instead. You are getting redirected to login.');
-		window.location.href = LOGIN_URL;
-	}
-
-	registerUser(formInputs);
-
-});
 

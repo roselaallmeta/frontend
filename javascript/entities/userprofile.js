@@ -1,5 +1,5 @@
 console.log('userprofile.js loaded');
-// const BACKEND_URL = 'http://localhost:8000';
+
 
 
 const profile_table = document.getElementById('profile-table');

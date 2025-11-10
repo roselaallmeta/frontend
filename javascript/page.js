@@ -1,30 +1,6 @@
 console.log('page.js loaded');
 console.log("App initalized with:" , {BACKEND_URL});
 
-// const saveIdInLS = async (userId) => {
-// 	const response = await fetch (`${BACKEND_URL}/users?limit=10&ofset=0`);
-// 	const data = await response.json();
-// 	console.log('ids', data);
-// }
-
-
-// const userId = localStorage.setItem('user_id', id);
-// const printesUserId = localStorage.getItem('user_id');
-// console.log(printesUserId);
-
-
-
-
-
-// Faqja Kryesore:
-// - [ ]  Merr userId nga localStorage
-// - [ ]  Shfaq diku userId qe ke stored & nje buton "Logout"
-//     - [ ]  Kur klikon, duhet te heqesh userId nga localStorage & bej redirect tek faqja login
-
-// merre id nga backend dhe ruaje si value per local storage
-
-// 1 - merr id nga backend
-
 
 
 

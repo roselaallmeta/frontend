@@ -1,6 +1,6 @@
 
 console.log('venture.js loaded');
-// const BACKEND_URL = 'http://localhost:8000';
+
 
 
 const venture_table = document.getElementById('venture-table');
@@ -68,9 +68,6 @@ const addVentureRowToTable = async (row) => {
 
 	tr.appendChild(actions_td);
 
-	// invest_td.addEventListener('click', () => {
-	// 	investInVenture();
-	// });
 
 	tr.appendChild(id_td);
 	tr.appendChild(name_td);

@@ -1,11 +1,10 @@
 console.log('investment.js loaded');
-// const BACKEND_URL = 'http://localhost:8000';
+
 
 const investment_table = document.getElementById('investment-table');
 const addInvestmentButton = document.getElementById('investment-button');
 
 
-// FIX UNDEFINED USER_ID DHE VENTURE_ID
 
 const addInvestmentRowToTable = (row) => {
 	const tr = document.createElement('tr');
@@ -42,7 +41,6 @@ const addInvestmentRowToTable = (row) => {
 	actions_td.innerHTML = 'Delete Investment';
 	actions_td.addEventListener('click', () => deleteInvestmentRow(row.id));
 
-	// tr.appendChild(id_td);
 	tr.appendChild(userId_td);
 	tr.appendChild(ventureId_td);
 	tr.appendChild(title_td);
@@ -122,7 +120,6 @@ function processInvestmentManageForm(e) {
 	console.log({ formInputs });
 
 	if (
-		// !formInputs.id || formInputs.id.trim() == '' ||
 
 		!formInputs.user_id ||
 		formInputs.user_id.trim() == '' ||

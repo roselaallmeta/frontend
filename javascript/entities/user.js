@@ -1,5 +1,5 @@
 console.log('user.js loaded');
-// const BACKEND_URL = 'http://localhost:8000';
+
 
 const user_table = document.getElementById('user-table');
 const addUserButton = document.getElementById('user-button');
@@ -135,7 +135,7 @@ function processUserManageForm(e) {
 				throw new Error(message);
 			}
 
-			// Add new row to table (can't do it with the current backend - as it doesn't return the row (FIX))
+
 			addUserRowToTable(row);
 
 			userManageForm?.reset();
@@ -194,7 +194,7 @@ const selectUserResponseID = addSelectUserID();
 
 
 
-//fix undefined dhe cannot read 
+
 const userInvestmentSelectID = document.getElementById('userInvestment_select_id');
 
 
